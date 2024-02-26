@@ -104,14 +104,6 @@ class ETCG(IStrategy):
             }
         ]
 
-    """
-    # ROI table:
-    minimal_roi = {
-        "0": 0.99,
-
-    }
-    """
-
     # Stoploss:
     stoploss = -0.99
 
@@ -187,8 +179,8 @@ class ETCG(IStrategy):
         pairs = self.dp.current_whitelist()
         informative_pairs = [(pair, '1h') for pair in pairs]
 
-        if self.config['stake_currency'] in ['USDT','BUSD','USDC','DAI','TUSD','PAX','USD','EUR','GBP']:
-            btc_info_pair = f"BTC/{self.config['stake_currency']}"
+        if self.config['trading_mode'] == "futures":
+            btc_info_pair = "BTC/USDT:USDT"
         else:
             btc_info_pair = "BTC/USDT"
 
@@ -242,8 +234,8 @@ class ETCG(IStrategy):
 
     def populate_indicators(self, dataframe: DataFrame, metadata: dict) -> DataFrame:
 
-        if self.config['stake_currency'] in ['USDT','BUSD']:
-            btc_info_pair = f"BTC/{self.config['stake_currency']}"
+        if self.config['trading_mode'] == "futures":
+            btc_info_pair = "BTC/USDT:USDT"
         else:
             btc_info_pair = "BTC/USDT"
 
@@ -413,7 +405,7 @@ class ETCG(IStrategy):
 def pct_change(a, b):
     return (b - a) / a
 
-class EI3v2_tag_cofi_dca_green(EI3v2_tag_cofi_green):
+class EI3v2_tag_cofi_dca_green(ETCG):
 
 
     initial_safety_order_trigger = -0.018
@@ -426,7 +418,7 @@ class EI3v2_tag_cofi_dca_green(EI3v2_tag_cofi_green):
     }
 
     # append buy_params of parent class
-    buy_params.update(EI3v2_tag_cofi_green.buy_params)
+    buy_params.update(ETCG.buy_params)
 
     dca_min_rsi = IntParameter(35, 75, default=buy_params['dca_min_rsi'], space='buy', optimize=True)
 
