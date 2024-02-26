@@ -1,0 +1,128 @@
+{
+    "max_open_trades": 3,
+    "stake_currency": "USDT",
+    "stake_amount": "unlimited",
+    "tradable_balance_ratio": 0.99,
+    "fiat_display_currency": "USD",
+    "dry_run": false,
+    "dry_run_wallet": 1000,
+    "cancel_open_orders_on_exit": false,
+    "position_adjustment_enable": true,
+    "trading_mode": "spot",
+    "margin_mode": "isolated",
+    "dataformat_ohlcv": "feather",
+    "dataformat_trades": "feather",
+    "unfilledtimeout": {
+        "entry": 10,
+        "exit": 10,
+        "exit_timeout_count": 0,
+        "unit": "minutes"
+    },
+    "order_types": {
+        "entry": "limit",
+        "exit": "limit",
+        "emergency_exit": "limit",
+        "force_entry": "limit",
+        "force_exit": "limit",
+        "stoploss": "limit",
+        "stoploss_on_exchange": false,
+        "stoploss_on_exchange_interval": 60,
+        "stoploss_on_exchange_limit_ratio": 0.99
+    },
+    "entry_pricing": {
+        "price_side": "other",
+        "use_order_book": false,
+        "order_book_top": 1,
+        "price_last_balance": 0.0,
+        "check_depth_of_market": {
+            "enabled": false,
+            "bids_to_ask_delta": 1
+        }
+    },
+    "exit_pricing":{
+        "price_side": "other",
+        "use_order_book": false,
+        "order_book_top": 1,
+        "price_last_balance": 0
+    },
+    "exchange": {
+        "name": "binance",
+        "key": "",
+        "secret": "",
+        "ccxt_config": {
+            "hostname": "binance.com"
+        },
+        "ccxt_async_config": {
+            "enableRateLimit": true,
+            "rateLimit": 60
+        },
+        "pair_whitelist": [
+        ],
+        "pair_blacklist": [
+             "(BNB)/.*",
+             ".*(_PREMIUM|BEAR|BULL|HALF|HEDGE|UP|DOWN|[1235][SL])/.*",
+             "(AUD|BRZ|CAD|CHF|EUR|GBP|HKD|IDRT|JPY|NGN|RUB|SGD|TRY|UAH|USD|ZAR)/.*",
+             "(BUSD|CUSD|CUSDT|DAI|PAXG|SUSD|TUSD|USDC|USDN|USDP|USDT|VAI|UST|USTC|AUSD)/.*",
+             "(ACM|AFA|ALA|ALL|ALPINE|APL|ASR|ATM|BAR|CAI|CHZ|CITY|FOR|GAL|GOZ|IBFK|JUV|LEG|LOCK-1|NAVI|NMR|NOV|PFL|PSG|ROUSH|STV|TH|TRA|UCH|UFC|YBO)/.*",
+             "(1EARTH|ILA|BOBA|CTXC|CWAR|HBAR|OMG|ONG|ARDR|DMTR|MLS|TORN|LUNA|BTS|QKC|COS|ACA|FTT|SRM|YFII|SNM|ANC|AION|MIR|BNX|STG|HNT|WABI|QLC|NEBL|AUTO|VGX|PEPE|VITE|DREP|JASMY|PNT|PERL|AMB|OAX|LOOM|RAD|ID|NULS|MLN|MEME|TOKEN|TOMO|WTC|1000SATS|ORDI|XMR|ANT|MULTI|VAI)/.*"
+        ]
+    },
+    "pairlists": [
+        {
+            "method": "VolumePairList",
+            "number_assets": 150,
+            "sort_key": "quoteVolume",
+            "min_value": 0,
+            "refresh_period": 1800
+        },
+        { "method": "AgeFilter", "min_days_listed": 3 },
+        {
+          "method": "PriceFilter",
+          "low_price_ratio": 0.003
+        },
+        {
+          "method": "SpreadFilter",
+          "max_spread_ratio": 0.005
+        },
+        {
+          "method": "RangeStabilityFilter",
+          "lookback_days": 3,
+          "min_rate_of_change": 0.03,
+          "refresh_period": 1800
+        },
+        {
+            "method": "VolumePairList",
+            "number_assets": 100,
+            "sort_key": "quoteVolume",
+            "refresh_period": 1800
+        },
+        {
+        "method": "ShuffleFilter",
+        "shuffle_frequency": "candle"
+        }
+    ],
+    "telegram": {
+        "enabled": true,
+        "token": "",
+        "chat_id": "990187757"
+    },
+    "api_server": {
+        "enabled": true,
+        "listen_ip_address": "0.0.0.0",
+        "listen_port": 8080,
+        "verbosity": "error",
+        "enable_openapi": true,
+        "jwt_secret_key": "7ed06fba56cbf7206584b7201ed8d5d84e724391a20a4c0b89ef751e08bf1e6a",
+        "ws_token": "1zdQV2hijeWwb77Tv9i3c7KKyOXJ5IvjFQ",
+        "CORS_origins": [""],
+        "username": "freqtrader_eugene",
+        "password": "freqtrader_eugene1207"
+    },
+    "bot_name": "freqtrade",
+    "initial_state": "running",
+    "force_entry_enable": true,
+    "internals": {
+        "process_throttle_secs": 5
+    }
+}
+
