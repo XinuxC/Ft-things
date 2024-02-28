@@ -115,8 +115,8 @@
         "jwt_secret_key": "7ed06fba56cbf7206584b7201ed8d5d84e724391a20a4c0b89ef751e08bf1e6a",
         "ws_token": "1zdQV2hijeWwb77Tv9i3c7KKyOXJ5IvjFQ",
         "CORS_origins": [""],
-        "username": "freqtrader_eugene",
-        "password": "freqtrader_eugene1207"
+        "username": "",
+        "password": ""
     },
     "bot_name": "freqtrade",
     "initial_state": "running",
