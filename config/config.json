@@ -95,8 +95,8 @@
     ],
     "telegram": {
         "enabled": true,
-        "token": "6790413816:AAGaDN66pnWe3sxXz12Jc4vzi1zqVsiSigQ",
-        "chat_id": "990187757",
+        "token": "",
+        "chat_id": "",
 	"keyboard": [
             [
                 "/daily",
@@ -124,9 +124,9 @@
         "enable_openapi": false,
         "jwt_secret_key": "f831eda00e9d10ef7bdc1c0a95c3fc1320be56e67efdfc2140e709dc73ce4d3a",
         "ws_token": "Z0qoI6OlNLC7i59AtKshvmDtZUUfiQ4XiQ",
-        "CORS_origins": ["https://vultr-nfix4.chenemi.top"],
-        "username": "freqtrader_eugene",
-        "password": "freqtrader_eugene0129"
+        "CORS_origins": [""],
+        "username": "",
+        "password": ""
     },
     "bot_name": "freqtrade",
     "initial_state": "running",
