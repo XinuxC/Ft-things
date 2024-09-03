@@ -135,7 +135,6 @@
         "process_throttle_secs": 5
     },
     "add_config_files": [
-    "./configs/blacklist-gateio.json",
-    "./configs/discord.json"
+    "./configs/blacklist-gateio.json"
     ]
 }
