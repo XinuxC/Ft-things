@@ -7,7 +7,7 @@
     "dry_run": false,
     "dry_run_wallet": 2500,
     "cancel_open_orders_on_exit": false,
-    "position_adjustment_enable": true, //rebuy
+    "position_adjustment_enable": true, 
     "trading_mode": "futures",
     "margin_mode": "isolated",
     "dataformat_ohlcv": "feather",
